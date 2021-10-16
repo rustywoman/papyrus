@@ -1,0 +1,6 @@
+flask
+flask-cors
+pdfkit
+pyvirtualdisplay
+python-json-logger
+cerberus

@@ -1,0 +1,74 @@
+extends ./_layout.pug
+
+block metas
+  title Template 1
+
+block header
+  include ./mixin/_header.pug
+  +header("green")
+
+block footer
+  include ./mixin/_footer.pug
+  +footer("green")
+
+block contents
+  div.row
+    div.col.s4
+      div
+        h2 TITLE
+      div.row
+        div.col
+          h6 英字 ::: Abel
+          div.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      div.row
+        div.col
+          h6 日本語 ::: Noto Sans JP
+          div.
+            えたいの知れない不吉な塊が私の心を始終圧えつけていた。
+      div.row
+        div.col
+          h6 Materialize ::: タグ
+          div
+            div.chip.z-depth-1 Tag A
+            div.chip.z-depth-1 Tag B
+            div.chip.z-depth-1 Tag C
+      div.row
+        div.col
+          h6 Image ::: 画像
+          div.image
+            img(
+              width="30"
+              height="30"
+              alt="logo"
+              src=`${self.htmlWebpackPlugin.options.staticPath}image/logo.png`
+            )
+    div.col.s8
+      h2 DETAIL
+      div.
+        {% if LEDGER|length == 0 %}
+          <div class="center-align error-msg">None</div>
+        {% else %}
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for _ledger in LEDGER %}
+              <tr>
+                <td>{{_ledger.date}}</td>
+                <td>{{_ledger.id}}</td>
+                <td>{{_ledger.name}}</td>
+                <td>{{format_currency(_ledger.price)}}</td>
+                <td>{% if _ledger.status == "done" %}<i class="material-icons green-text">done</i>{% endif %}{% if _ledger.status == "close" %}<i class="material-icons red-text">close</i>{% endif %}{% if _ledger.status == "call" %}<i class="material-icons">call</i>{% endif %}{% if _ledger.status == "warning" %}<i class="material-icons">warning</i>{% endif %}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% endif %}

@@ -1,0 +1,46 @@
+doctype html
+html(lang="ja")
+  head
+    meta(charset="UTF-8")
+    meta(
+      http-equiv="content-language"
+      content="ja"
+    )
+    meta(
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    )
+    link(
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    )
+    link(
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin=""
+    )
+    link(
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Abel&display=swap"
+    )
+    link(
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap"
+    )
+    link(
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    )
+    link(
+      rel="icon"
+      href=`${self.htmlWebpackPlugin.options.staticPath}favicon.ico`
+    )
+    block metas
+  body
+    include ./component/_paper.pug
+    header#header
+      block header
+    div#content
+      block contents
+    footer#footer
+      block footer

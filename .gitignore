@@ -1,0 +1,11 @@
+# Python Cache
+# ---
+__pycache__
+
+# ---
+.DS_Store
+.test
+node_modules
+template/package-lock.json
+template/dist/css
+template/dist/js

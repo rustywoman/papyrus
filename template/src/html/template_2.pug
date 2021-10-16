@@ -1,0 +1,21 @@
+extends ./_layout.pug
+
+block metas
+  title Template 2
+
+block header
+  include ./mixin/_header.pug
+  +header("red")
+
+block footer
+  include ./mixin/_footer.pug
+  +footer("red")
+
+block contents
+  div.row
+    div.col.s2
+      div
+        h2.red-text ERROR
+    div.col.s10
+      h2 Your PDF Data is invalid :::
+      div.error-msg {{MSG}}

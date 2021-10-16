@@ -1,0 +1,11 @@
+@charset 'UTF-8';
+
+@import 'color';
+@import 'pdf';
+
+.chip{
+  margin: 10px 12px 0 0;
+  &:last-child{
+    margin: 10px 0 0;
+  }
+}

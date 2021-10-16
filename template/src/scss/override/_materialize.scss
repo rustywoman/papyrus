@@ -1,0 +1,42 @@
+$BUFFER: 1.95rem;
+
+.row{
+  .col{
+    padding: 0 $BUFFER;
+  }
+}
+
+.col{
+  .row{
+    margin-right: -1 * $BUFFER;
+    margin-left: -1 * $BUFFER;
+  }
+}
+
+.nav-wrapper{
+  h5{
+    position: absolute;
+    top: 50%;
+    right: $BUFFER;
+    margin: 0;
+    line-height: 1;
+    transform: translateY(-50%);
+  }
+}
+
+.page-footer{
+  h5{
+    margin: 10px 0;
+    line-height: 1;
+  }
+  .footer-copyright{
+    display: block;
+    min-height: auto;
+    padding: 3px $BUFFER;
+    font-size: 11px;
+  }
+}
+
+.material-icons{
+  vertical-align: bottom;
+}

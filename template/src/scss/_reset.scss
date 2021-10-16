@@ -1,0 +1,26 @@
+// @font-face {
+//   font-family: 'Noto Sans JP';
+//   font-style: normal;
+//   font-weight: 300;
+//   src: local("Noto Sans CJK JP");
+// }
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Abel', 'Noto Sans JP', '游ゴシック体', YuGothic, '游ゴシック Medium', 'Yu Gothic Medium', '游ゴシック', 'Yu Gothic', sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: $RAW_BLACK;
+  text-align: justify;
+  letter-spacing: 0.15em;
+}
+
+ul{
+  list-style: none;
+  li{
+    &:last-child{
+      margin: 0 !important;
+    }
+  }
+}

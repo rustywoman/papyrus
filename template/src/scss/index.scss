@@ -1,0 +1,33 @@
+@charset 'UTF-8';
+
+@import 'color';
+@import 'mixins';
+
+html,
+body,
+#content{
+  height: 100%;
+}
+
+#wrapper{
+  @include centerHalfAndHalf();
+  width: 100%;
+  height: auto;
+  h1{
+    padding: 20px 0;
+    background-color: $BLACK;
+    font-size: 50px;
+    color: $WHITE;
+    text-shadow: 0px 1px 1px $GREY;
+    text-align: center;
+  }
+  ul{
+    margin: 60px 0 0;
+    li{
+      margin: 0 0 40px;
+      a{
+        letter-spacing: 0.2em;
+      }
+    }
+  }
+}
