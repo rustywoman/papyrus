@@ -41,8 +41,7 @@ module.exports = (env, options) => {
   if(focusedBuildEntry !== ''){
     focusedFlg = true;
   }
-  const buildMode = options.environment;
-  const buildHash = Math.random().toString(36).substring(2, 8);
+  let buildMode = options.environment;
   let _entries = {};
   let assetsPublicPath = '/';
   let staticPath = `http://localhost:${devServerPort}`;
@@ -85,14 +84,15 @@ module.exports = (env, options) => {
           test : /.*-common.(js|css)/i
         }),
         new MiniCssExtractPlugin({
-          filename : 'css/' + buildHash + '/[name].css'
+          filename : 'css/[name].css'
         })
       ];
       break;
     default:
+      buildMode = 'dev';
       plugins = [
         new MiniCssExtractPlugin({
-          filename : 'css/' + buildHash + '/[name].css'
+          filename : 'css/[name].css'
         })
       ];
       break;
@@ -108,7 +108,7 @@ module.exports = (env, options) => {
     entry  : _entries,
     output : {
       path       : distRootDir,
-      filename   : 'js/' + buildHash + '/[name].js',
+      filename   : 'js/[name].js',
       publicPath : assetsPublicPath
     },
     optimization : {
@@ -181,7 +181,8 @@ module.exports = (env, options) => {
                 filename    : buildEntry + '.html',
                 inject      : true,
                 chunks      : [buildEntry],
-                staticPath  : assetsPublicPath
+                staticPath  : assetsPublicPath,
+                buildMode   : buildMode
               }
             )
           );
@@ -198,7 +199,8 @@ module.exports = (env, options) => {
               filename    : buildEntry + '.html',
               inject      : true,
               chunks      : [buildEntry],
-              staticPath  : assetsPublicPath
+              staticPath  : assetsPublicPath,
+              buildMode   : buildMode
             }
           )
         );

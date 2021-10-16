@@ -200,12 +200,12 @@ def send_css(path):
     return send_from_directory("template/dist/css", path)
 
 
-# Access to "/css/*/papyrus-common.css" [ GET ]
+# Access to "/css/papyrus-common.css" [ GET ]
 # ---
-@APP.route("/css/<path:path>/papyrus-common.css")
-def send_gzip_css(path):
+@APP.route("/css/papyrus-common.css")
+def send_gzip_css():
     return ___gzip(
-        filePath="template/dist/css/{_hash}/papyrus-common.css.gz".format(_hash=path),
+        filePath="template/dist/css/papyrus-common.css.gz",
         contentType="text/css")
 
 
@@ -216,12 +216,12 @@ def send_js(path):
     return send_from_directory("template/dist/js", path)
 
 
-# Access to "/js/*/papyrus-common.js" [ GET ]
+# Access to "/js/papyrus-common.js" [ GET ]
 # ---
-@APP.route("/js/<path:path>/papyrus-common.js")
-def send_gzip_js(path):
+@APP.route("/js/papyrus-common.js")
+def send_gzip_js():
     return ___gzip(
-        filePath="template/dist/js/{_hash}/papyrus-common.js.gz".format(_hash=path),
+        filePath="template/dist/js/papyrus-common.js.gz",
         contentType="text/javascript")
 
 

@@ -15,12 +15,10 @@ $FOOTER_HEIGHT: 168px;
   position: relative;
   width: 100%;
   max-height: $HEADER_HEIGHT;
-  img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: $HEADER_HEIGHT;
-    height: $HEADER_HEIGHT;
+  .nav-wrapper{
+    h5{
+      line-height: $HEADER_HEIGHT;
+    }
   }
 }
 

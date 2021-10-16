@@ -1,0 +1,33 @@
+- var _buildMode = self.htmlWebpackPlugin.options.buildMode;
+
+link(
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+)
+
+if _buildMode == "dev"
+  link(
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Abel&display=swap"
+  )
+  link(
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap"
+  )
+else
+  //- @font-face{
+  //-   font-family: "Abel";
+  //-   font-style: normal;
+  //-   font-weight: 400;
+  //-   font-display: swap;
+  //-   src: local("Abel");
+  //- }
+  //- @font-face{
+  //-   font-family: "Noto Sans JP";
+  //-   font-style: normal;
+  //-   font-weight: 400;
+  //-   font-display: swap;
+  //-   src: local("Noto Sans CJK JP Regular");
+  //- }
+  style.
+    @font-face{font-family: "Abel";font-style: normal;font-weight: 400;font-display: swap;src: local("Abel");}@font-face{font-family: "Noto Sans JP";font-style: normal;font-weight: 400;font-display: swap;src: local("Noto Sans CJK JP Regular");}

@@ -15,12 +15,7 @@ $BUFFER: 1.95rem;
 
 .nav-wrapper{
   h5{
-    position: absolute;
-    top: 50%;
-    right: $BUFFER;
-    margin: 0;
-    line-height: 1;
-    transform: translateY(-50%);
+    margin: 0 $BUFFER;
   }
 }
 
